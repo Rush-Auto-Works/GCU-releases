@@ -2,8 +2,8 @@
 """Render the manual's GCU firmware "## Releases" section from CHANGELOG.md.
 
 GitHub (this repo) is the source of truth for GCU release notes. The owner's
-manual (Rush-Auto-Works/manual.rush.sr) renders a mirror at
-`maintenance/electronics-and-wiring/gcu-firmware.md`. This script regenerates
+manual (Rush-Auto-Works/manual.rush.sr) renders a mirror on the Legacy GCU page
+`maintenance/electronics-and-wiring/gcu/legacy.md`. This script regenerates
 ONLY that file's `## Releases` section from CHANGELOG.md so the two never drift;
 the page's flashing instructions above `## Releases` are left untouched.
 
@@ -23,7 +23,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent.parent
 CHANGELOG = HERE / "CHANGELOG.md"
-MANUAL_PAGE = Path("maintenance/electronics-and-wiring/gcu-firmware.md")
+MANUAL_PAGE = Path("maintenance/electronics-and-wiring/gcu/legacy.md")
 ASSET_TMPL = "../../.gitbook/assets/rush_GCU_{version}.zip"
 # Matches a real version heading ("3.1.0 — March 2026") but NOT prose headings
 # like "3.0.3 and earlier", so the latter gets no download asset.
