@@ -4,7 +4,7 @@ Release notes for the Rush SR Gear Control Unit firmware. This file is the sourc
 
 ## 5.0.0 — August 2026
 
-**The first release on the Active GCU** — a development cycle's worth of shift-smarts, logged and tagged so the box tells you what it did. The Active GCU now drives the brake light, every auto-downshift refusal is explained in the logs, and shift traces record exactly where the shift drum went.
+**The first release on the GCU Mk3** — a development cycle's worth of shift-smarts, logged and tagged so the box tells you what it did. The GCU Mk3 now drives the brake light, every auto-downshift refusal is explained in the logs, and shift traces record exactly where the shift drum went.
 
 - **The GCU drives the brake light.** Brake pressure from the dash's brake channels switches the brake light on and off — no more chasing a relay. Failsafe is fail-bright: if the dash goes quiet or a sensor reads out of range, the light comes on rather than staying dark. A bench mode (`BRAKE_TEST`) lets you force the light on for wiring checks without the engine running.
 - **Auto-downshift refusals are visible.** Hold the down paddle and the GCU walks the box down toward redline. Every time it declines a shift — revs still climbing, wrong conditions, no fresh data — it now says why, in the logs and on the dash. No more silent "hold did nothing."
@@ -13,7 +13,7 @@ Release notes for the Rush SR Gear Control Unit firmware. This file is the sourc
 - **Gentler neutral finder.** The progressive neutral pulse is configurable (5/10/20/30/40 ms) instead of one fixed value.
 - **Flasher improvements.** It enters the bootloader on its own before flashing, and the Sessions viewer got a proper dialog and scroll-pause.
 
-**Flasher note:** this release contains `.bin` files for the Feather-M4-based Active GCU, not the legacy `.hex` files. The Active GCU flasher is built into the same app.
+**Flasher note:** this release contains `.bin` files for the Feather M4 based GCU Mk3, not the legacy `.hex` files. The GCU Mk3 flasher is built into the same app.
 
 ## 3.1.1 — July 2026
 
