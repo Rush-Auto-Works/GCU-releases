@@ -10,12 +10,12 @@ Rush has shipped two GCU designs. Check which one you have before you flash.
 
 | | **GCU Mk3** | **Legacy GCU** |
 |---|---|---|
-| **Fitted to** | Newer builds (Gen2, drive-by-wire) | Earlier builds (Gen1, throttle cable) |
+| **Fitted to** | Newer builds. Can also be fitted to Gen1 cars with the current shift harness | Earlier builds (Gen1, throttle cable) |
 | **Hardware** | Small flat black box, one multicolor LED | Large grey box, two metal connectors, red, yellow, and green LEDs |
 | **Firmware** | **5.x** (`.bin` files) | **3.x** (`.hex` files) |
 | **USB port** | USB-C on the piggyback harness (dealer-installed if absent) | USB-B on the unit |
 
-Gen1 and Gen2 are car generations, not GCU generations. A Gen1 car has a throttle cable at the pedal box. A Gen2 car has an accelerator pedal sensor and no cable. The GCU Mk3 also reports firmware 5.x when you connect to it.
+Gen1 and Gen2 are car generations, not GCU generations. A Gen1 car has a throttle cable at the pedal box. A Gen2 car has an accelerator pedal sensor and no cable. On the GCU Mk3, Gen2 cars use the CAN build and Gen1 cars use the K-line build, which ships from firmware 5.1.1. Ask Rush Auto Works which shift harness your car has before fitting a GCU Mk3 to a Gen1 car.
 
 ## The GCU Utility
 
@@ -24,6 +24,22 @@ The GCU Mk3 comes with the **GCU Utility**, a desktop app for macOS and Windows 
 ![GCU Utility Overview page for a connected car, showing the current gear, tank pressure, and a healthy CAN link, with shortcuts to Update Firmware, Live Data, Sessions, and Settings](docs/images/gcu-utility-overview.png)
 
 *Overview: the connected car, its firmware version, and a quick health summary, with shortcuts to the other pages.*
+
+![GCU Utility Update Firmware page ready to flash 5.1.1 over 5.1.0, with every preflight check reading ok and nothing written yet](docs/images/gcu-utility-update.png)
+
+*Update Firmware: read-only checks run first, and nothing is written until you click Flash.*
+
+![GCU Utility Live Data page showing gear 3 from the gear sensor, engine RPM, speed, tank pressure, front and rear brake pressure, and throttle](docs/images/gcu-utility-live-data.png)
+
+*Live Data: what the GCU sees right now.*
+
+![GCU Utility Logs page with a session on the GCU selected, showing its shift count, one missed shift, and the event with an Export report button](docs/images/gcu-utility-logs.png)
+
+*Logs: copy sessions from the GCU to your laptop and read what happened. The originals stay on the GCU.*
+
+![GCU Utility Settings page listing each setting with its factory, saved, and live values, and buttons to save all changes or restore factory settings](docs/images/gcu-utility-settings.png)
+
+*Settings: try a change temporarily, then save it to the GCU or restore the factory settings.*
 
 ## What the GCU Mk3 does
 
