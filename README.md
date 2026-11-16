@@ -10,12 +10,11 @@ Rush has shipped two GCU designs. Check which one you have before you flash.
 
 | | **GCU Mk3** | **Legacy GCU** |
 |---|---|---|
-| **Fitted to** | Newer builds. Can also be fitted to Gen1 cars with the current shift harness | Earlier builds (Gen1, throttle cable) |
 | **Hardware** | Small flat black box, one multicolor LED | Large grey box, two metal connectors, red, yellow, and green LEDs |
 | **Firmware** | **5.x** (`.bin` files) | **3.x** (`.hex` files) |
 | **USB port** | USB-C on the piggyback harness (dealer-installed if absent) | USB-B on the unit |
 
-Gen1 and Gen2 are car generations, not GCU generations. A Gen1 car has a throttle cable at the pedal box. A Gen2 car has an accelerator pedal sensor and no cable. On the GCU Mk3, Gen2 cars use the CAN build and Gen1 cars use the K-line build, which ships from firmware 5.1.1. Ask Rush Auto Works which shift harness your car has before fitting a GCU Mk3 to a Gen1 car.
+Both GCUs work on every Rush SR. The GCU Mk3 has two firmware builds: Gen2 cars (accelerator pedal sensor, no throttle cable) use the CAN build, and Gen1 cars (throttle cable at the pedal box) use the K-line build, which ships from firmware 5.1.1.
 
 ## The GCU Utility
 
