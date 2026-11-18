@@ -4,6 +4,22 @@ This is where Rush SR owners download firmware for the **Gear Control Unit (GCU)
 
 The current unit is the **GCU Mk3**, the third-generation GCU. The rest of this page is mostly about it.
 
+## Releases
+
+**[Download the latest release](../../releases/latest)**, or pick a version below. Check [which GCU is in your car](#which-gcu-is-in-my-car) first: 5.x is for the GCU Mk3 and 3.x is for the Legacy GCU.
+
+| Version | Released | For | Download | Notes |
+|---|---|---|---|---|
+| [5.1.2](../../releases/tag/v5.1.2) | November 2026 | GCU Mk3 | [rush_GCU_5.1.2.zip](../../releases/download/v5.1.2/rush_GCU_5.1.2.zip) | [What changed](CHANGELOG.md#512--november-2026) |
+| [5.1.1](../../releases/tag/v5.1.1) | November 2026 | Internal development build, not released to owners. Its changes ship in 5.1.2. | | [What changed](CHANGELOG.md#511--november-2026-internal-development-build) |
+| [5.1.0](../../releases/tag/v5.1.0) | October 2026 | Internal development build, not released to owners. Its changes ship in 5.1.2. | | [What changed](CHANGELOG.md#510--october-2026-internal-development-build) |
+| [5.0.0](../../releases/tag/v5.0.0) | August 2026 | GCU Mk3 | [rush_GCU_5.0.0.zip](../../releases/download/v5.0.0/rush_GCU_5.0.0.zip) | [What changed](CHANGELOG.md#500--august-2026) |
+| [3.1.1](../../releases/tag/v3.1.1) | July 2026 | Legacy GCU | [rush_GCU_3.1.1.zip](../../releases/download/v3.1.1/rush_GCU_3.1.1.zip) | [What changed](CHANGELOG.md#311--july-2026) |
+| [3.1.0](../../releases/tag/v3.1.0) | March 2026 | Legacy GCU | [rush_GCU_3.1.0.zip](../../releases/download/v3.1.0/rush_GCU_3.1.0.zip) | [What changed](CHANGELOG.md#310--march-2026) |
+| [3.0.6](../../releases/tag/v3.0.6) | October 2025 | Legacy GCU | [rush_GCU_3.0.6.zip](../../releases/download/v3.0.6/rush_GCU_3.0.6.zip) | [What changed](CHANGELOG.md#306--october-2025) |
+| [3.0.5](../../releases/tag/v3.0.5) | June 2025 | Legacy GCU | [rush_GCU_3.0.5.zip](../../releases/download/v3.0.5/rush_GCU_3.0.5.zip) | [What changed](CHANGELOG.md#305--june-2025) |
+| [3.0.4](../../releases/tag/v3.0.4) | June 2025 | Legacy GCU | [rush_GCU_3.0.4.zip](../../releases/download/v3.0.4/rush_GCU_3.0.4.zip) | [What changed](CHANGELOG.md#304--june-2025) |
+
 ## Which GCU is in my car?
 
 Rush has shipped two GCU designs. Check which one you have before you flash.
@@ -14,11 +30,11 @@ Rush has shipped two GCU designs. Check which one you have before you flash.
 | **Firmware** | **5.x** (`.bin` files) | **3.x** (`.hex` files) |
 | **USB port** | USB-C on the piggyback harness (dealer-installed if absent) | USB-B on the unit |
 
-Both GCUs work on every Rush SR. The GCU Mk3 has two firmware builds: Gen2 cars (accelerator pedal sensor, no throttle cable) use the CAN build, and Gen1 cars (throttle cable at the pedal box) use the K-line build, which ships from firmware 5.1.1.
+The Legacy GCU works on every Rush SR. GCU Mk3 firmware is published for Gen2 cars (accelerator pedal sensor, no throttle cable).
 
 ## The GCU Utility
 
-The GCU Mk3 comes with the **GCU Utility**, a desktop app for macOS and Windows that includes the flasher. It ships in the release download starting with firmware 5.1. Connect a laptop to the car over USB and the Utility lets you update firmware, watch live data, pull session logs, and change settings.
+The GCU Mk3 comes with the **GCU Utility**, a desktop app for macOS and Windows that includes the flasher. It ships in the release download starting with firmware 5.1.2. Connect a laptop to the car over USB and the Utility lets you update firmware, watch live data, pull session logs, and change settings.
 
 ![GCU Utility Overview page for a connected car, showing the current gear, tank pressure, and a healthy CAN link, with shortcuts to Update Firmware, Live Data, Sessions, and Settings](docs/images/gcu-utility-overview.png)
 
@@ -44,7 +60,7 @@ The GCU Mk3 comes with the **GCU Utility**, a desktop app for macOS and Windows 
 
 The Legacy GCU fires a valve on a timer and assumes the gear went in. The GCU Mk3 talks to the engine ECU and the AiM dash over CAN and reads its own gear-position sensor, so it knows the gear, the engine RPM, and whether each shift landed.
 
-The **Firmware** column says which release a feature arrives in. The latest release published here is 5.0.0, so check [Releases](../../releases) for what you can download today.
+The **Firmware** column says which release a feature arrives in. Features marked 5.1 or 5.1.1 reach owners in 5.1.2, because those two were internal builds.
 
 ### Shifting
 
@@ -81,9 +97,9 @@ The [owner's manual GCU Mk3 page](https://manual.rush.sr/maintenance/electronics
 
 ## Get the firmware
 
-Download the latest release from [**Releases**](../../releases). Each release zip contains the firmware for the matching unit and the app to flash it:
+Download a release from the [list above](#releases). Each release zip contains the firmware for the matching unit and the app to flash it:
 
-- **GCU Mk3 (5.x):** `release_CAN_feather-X.X.X.bin`. From 5.1.1 the download also carries `release_KLine_feather-X.X.X.bin`.
+- **GCU Mk3 (5.x):** `release_CAN_feather-X.X.X.bin`
 - **Legacy GCU (3.x):** `release_CAN-X.X.X.hex` or `release_KLine-X.X.X.hex`
 
 ## Flash it
