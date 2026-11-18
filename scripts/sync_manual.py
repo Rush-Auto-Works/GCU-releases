@@ -26,7 +26,8 @@ CHANGELOG = HERE / "CHANGELOG.md"
 MANUAL_PAGE = Path("maintenance/electronics-and-wiring/gcu/legacy.md")
 ASSET_TMPL = "../../.gitbook/assets/rush_GCU_{version}.zip"
 # Matches a real version heading ("3.1.0 — March 2026") but NOT prose headings
-# like "3.0.3 and earlier", so the latter gets no download asset.
+# like "3.0.3 and earlier", so the latter gets no download asset. An internal
+# development build has no zip either.
 VERSION_RE = re.compile(r"^(\d+\.\d+\.\d+)(?:\s+—\s+.+)?$")
 
 
@@ -52,10 +53,10 @@ def render():
         out.append(f"### {heading}")
         out.append("")
         if body:
-            out.append(body)
+            out.append(re.sub(r"^### ", "#### ", body, flags=re.M))
             out.append("")
         m = VERSION_RE.match(heading)
-        if m:
+        if m and "internal development build" not in heading:
             out.append("{% file src=\"" + ASSET_TMPL.format(version=m.group(1)) + "\" %}")
             out.append("")
     return "\n".join(out).rstrip() + "\n"
