@@ -45,7 +45,7 @@ Release notes for the Rush SR Gear Control Unit firmware. This file is the sourc
 
 Internal development build, never posted for download. Everything in it ships in [5.1.2](https://github.com/Rush-Auto-Works/GCU-releases/releases/tag/v5.1.2), the build to install.
 
-5.1.1 adds shift lockout, a setting that refuses the paddles while the car sits still at idle so a bumped paddle cannot put a gear in. It also makes the compressor droop correction safer, makes logging and settings saves more robust, and rebuilds large parts of the GCU Utility: a new Logs page with plain-language event cards, a Live Data dash, a status bar, and a Settings page where each setting is edited in place. Install it on any GCU Mk3.
+5.1.1 adds shift lockout, a setting that refuses the paddles while the car sits still at idle so a bumped paddle cannot put a gear in. It also makes the compressor droop correction safer, makes logging and settings saves more robust, and rebuilds large parts of the GCU Utility: a new Logs page with plain-language event cards, a Live Data dash, a status bar, and a Settings page where each setting is edited in place.
 
 ### Shift lockout
 
