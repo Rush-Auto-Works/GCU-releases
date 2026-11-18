@@ -12,9 +12,9 @@ Usage:
   sync_manual.py apply   <manual_repo_root>   # rewrite the manual page in place
   sync_manual.py --check <manual_repo_root>   # exit 1 if the page would change
 
-Asset references point at `../../.gitbook/assets/rush_GCU_<version>.zip`; the
-workflow copies each release zip there under that canonical name (dropping any
-" (1)" GitBook upload suffix).
+Asset references point at `../../.gitbook/assets/rush_GCU_<version>.zip`. The
+workflow copies the newest release's zip there under its release asset name,
+which is that same name; older zips are already in the manual.
 """
 
 import re
