@@ -54,6 +54,10 @@ jobs:
           mkdir -p manual/.gitbook/assets
           VERSION=$(grep -E '^## [0-9]+\.[0-9]+\.[0-9]+ — ' CHANGELOG.md \
             | grep -v 'internal development build' | head -n 1 | cut -d' ' -f2)
+          if ! gh release view "v$VERSION" --repo "$GITHUB_REPOSITORY" > /dev/null 2>&1; then
+            echo "::error::CHANGELOG.md lists $VERSION but v$VERSION is not published. Publish it, then run this workflow by hand."
+            exit 1
+          fi
           gh release download "v$VERSION" --repo "$GITHUB_REPOSITORY" \
             --pattern 'rush_GCU_*.zip' --dir manual/.gitbook/assets --clobber
 
